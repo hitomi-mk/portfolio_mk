@@ -9,7 +9,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'a week',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,7 +27,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: [{ src: '~/assets/css/app.scss', lang: 'scss' }],
+  css: [
+    { src: '~/assets/css/normalize.css', lang: 'css' },
+    { src: '~/assets/css/main.scss', lang: 'scss' },
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -43,7 +46,10 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: ['~/assets/css/_variable.scss', '~/assets/css/main.scss'],
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

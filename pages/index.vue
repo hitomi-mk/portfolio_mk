@@ -6,4 +6,9 @@
 export default {}
 </script>
 
-<style></style>
+<style scoped lang="scss">
+div {
+  background: $bg;
+  height: 100vh;
+}
+</style>

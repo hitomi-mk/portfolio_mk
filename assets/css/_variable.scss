@@ -1,8 +1,36 @@
+// 変数宣言
+// breakpoint
+////@include media(s) {
+////}
+$breakpoints: (
+  s: 'only screen and (min-width: 641px)',
+  m: 'only screen and (min-width: 789px)',
+  l: 'only screen and (min-width: 961px)',
+  xl: 'only screen and (min-width: 1025px)',
+  xxl: 'only screen and (min-width: 1281px)',
+);
+
+@mixin media($breakpoint: m) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 //color
-$background: linear-gradient(156.05deg, #92CEFA 17.37%, rgba(221, 160, 242, 0.38) 53.97%, rgba(241, 228, 245, 0) 74.53%),
-linear-gradient(179.28deg, #F0E5F7 65.52%, #EFE4F6 105.87%);
-$basecolor: #EFE4F6;
-$white: #F2F0F3;
-$purewhite: #FFFFFF;
-$mainblue: #92CEFA;
+$bg: linear-gradient(
+  162.69deg,
+  #92cefa 12.74%,
+  rgba(221, 160, 242, 0.38) 61.61%,
+  rgba(241, 228, 245, 0) 89.05%
+);
+$basecolor: #efe4f6;
+$white: #f2f0f3;
+$purewhite: #ffffff;
+$main: #92cefa;
 $textcolor_h1: #272630;
+
+//font
+
+//path
+$img_path: '~assets/img/';
+//呼び出し background-image: url('#{$img_path}[301]onwardlogo4.png')
