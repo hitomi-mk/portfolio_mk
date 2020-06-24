@@ -1,9 +1,8 @@
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
 
-// tell nuxt where to find it
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyA-WFr0r8yi7YuG0zuoDIsQVUsXxe3Aa5U',
   authDomain: 'aweek-58fc3.firebaseapp.com',
   databaseURL: 'https://aweek-58fc3.firebaseio.com',
@@ -15,9 +14,9 @@ var firebaseConfig = {
 }
 // Initialize Firebase
 let app = null
-if (!firebase.app.length) {
+if (!firebase.apps.length) {
   app = firebase.initializeApp(firebaseConfig)
+  firebase.analytics()
 }
-// firebase.analytics();
 
 export default firebase
